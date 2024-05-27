@@ -18,8 +18,7 @@ const googleConsentModeConfig = {
 const userCookiesDomain = "laurierquebec.com"
 
 // Determine the appropriate cookie version based on the current language of the document
-let cookieVersion;
-document.documentElement.lang === 'fr' ? cookieVersion = cookieVersionFR : cookieVersion = cookieVersionEN;
+const cookieVersion = document.documentElement.lang === 'fr' ?  cookieVersionFR : cookieVersionEN;
 
 // Configure Axeptio settings
 window.axeptioSettings = {
