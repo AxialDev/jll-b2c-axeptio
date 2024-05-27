@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <h3>See what happens if you consent to the facebook cookie or the hotjar cookie</h3>
+
+    <script>
+        void 0 === window._axcb && (window._axcb = []);
+        window._axcb.push(function(axeptio) {
+            axeptio.on("cookies:complete", function (choices) {
+                if (choices.facebook) {
+                    alert('Consent to facebook');
+                }
+
+                if (choices.hotjar) {
+                    alert('the axeptio_activate_hotjar was pushed to GTM');
+                }
+            });
+        });
+    </script>
+</div>
+
+<script src="axeptio.js"></script>
+</body>
+</html>
