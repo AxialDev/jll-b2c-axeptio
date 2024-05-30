@@ -15,7 +15,9 @@ You can test and preview the axeptio popup by opening the index.html file in any
 
 ### How to use the consent to launch a script in the code
 
-You can trigger any action by using this code snippet 
+Any script that is deployed from the codebase that requires user consent must not be triggered before consent is given. You can use this script to trigger an action depending on the user's choice in the Axeptio popup.
+
+See example in the `index.html` page for an Iframe that is not loaded before user consent.
 
 ```
 <script>

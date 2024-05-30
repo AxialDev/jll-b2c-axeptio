@@ -7,14 +7,33 @@
 <body>
 
 <div>
+    <iframe id="facebook"
+            data-src="https://goaxial.com"
+            height="600"
+            width="800"
+            style="border: none">
+    </iframe>
+
     <h3>See what happens if you consent to the facebook cookie or the hotjar cookie</h3>
 
     <script>
+        function displayIframe() {
+            const iframe = document.querySelector('iframe#facebook');
+            iframe.src = iframe.dataset.src;
+        }
+
+        function hideIframe() {
+            const iframe = document.querySelector('iframe#facebook');
+            iframe.src = '';
+        }
+
         void 0 === window._axcb && (window._axcb = []);
         window._axcb.push(function(axeptio) {
             axeptio.on("cookies:complete", function (choices) {
                 if (choices.facebook) {
-                    alert('Consent to facebook');
+                    displayIframe();
+                } else {
+                    hideIframe();
                 }
 
                 if (choices.hotjar) {
